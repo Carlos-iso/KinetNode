@@ -1,0 +1,231 @@
+.device {
+  position: relative;
+  width: 100%;
+  background: #0b1122;
+  box-shadow:
+    0 0 0 1px rgb(234 242 255 / 0.1),
+    0 30px 60px -20px rgb(0 0 0 / 0.6),
+    0 12px 24px -12px rgb(0 0 0 / 0.5);
+}
+
+.device__screen {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink-2);
+}
+.device__screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Browser */
+.device--browser {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.device--browser .device__screen {
+  aspect-ratio: 16 / 10;
+}
+.device__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 12px;
+  background: #0e1529;
+  border-bottom: 1px solid rgb(234 242 255 / 0.06);
+}
+.device__dots {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+}
+.device__dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgb(234 242 255 / 0.14);
+}
+.device__url {
+  padding: 3px 14px;
+  border-radius: 6px;
+  background: rgb(234 242 255 / 0.05);
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.02em;
+}
+
+/* Phone */
+.device--phone {
+  padding: 9px;
+  border-radius: 38px;
+  background: #0d1428;
+  box-shadow:
+    inset 0 0 0 1px rgb(234 242 255 / 0.12),
+    0 30px 60px -20px rgb(0 0 0 / 0.7),
+    0 12px 24px -12px rgb(0 0 0 / 0.5);
+}
+.device--phone .device__screen {
+  aspect-ratio: 9 / 19.5;
+  border-radius: 30px;
+}
+.device__island {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 50%;
+  width: 30%;
+  height: 20px;
+  border-radius: 20px;
+  background: #000;
+  transform: translateX(-50%);
+}
+
+/* Plain */
+.device--plain {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.device--plain .device__screen img {
+  height: auto;
+  object-fit: initial;
+}
+.device__screen--html {
+  overflow: hidden;
+  min-height: 200px;
+}
+
+/* ---------- Espaço reservado ---------- */
+
+.ph {
+  --ph: rgb(234 242 255 / 0.06);
+  --ph-2: rgb(234 242 255 / 0.1);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  gap: 4%;
+  padding: 4%;
+  background:
+    radial-gradient(120% 80% at 80% 0%, color-mix(in srgb, var(--accent, var(--blue)) 14%, transparent), transparent 60%),
+    var(--ink-2);
+}
+
+.ph__side {
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  width: 16%;
+  padding-top: 2%;
+}
+.ph__side i {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--ph);
+}
+.ph__logo {
+  width: 40%;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent, var(--blue)) 50%, transparent);
+  margin-bottom: 10%;
+}
+.ph__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+.ph__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4%;
+  height: 30%;
+}
+.ph__block {
+  border-radius: 8px;
+  background: var(--ph);
+  border: 1px solid rgb(234 242 255 / 0.04);
+}
+.ph__block--wide {
+  flex: 1;
+}
+.ph__row {
+  height: 8px;
+  width: 70%;
+  border-radius: 4px;
+  background: var(--ph-2);
+}
+.ph__row--head {
+  width: 40%;
+  height: 12px;
+}
+.ph__row--short {
+  width: 45%;
+}
+
+.ph--phone {
+  flex-direction: column;
+  gap: 3.5%;
+  padding: 22% 8% 8%;
+}
+.ph--phone .ph__row--head {
+  width: 55%;
+}
+.ph__block--hero {
+  height: 26%;
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent, var(--blue)) 35%, transparent), transparent),
+    var(--ph);
+}
+.ph__list {
+  display: grid;
+  gap: 10px;
+  margin-top: 4%;
+}
+.ph__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ph__avatar {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 8px;
+  background: var(--ph-2);
+}
+.ph__lines {
+  flex: 1;
+  display: grid;
+  gap: 6px;
+}
+.ph__lines i {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--ph);
+}
+.ph__lines i:first-child {
+  width: 80%;
+  background: var(--ph-2);
+}
+
+.ph__tag {
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  transform: translateX(-50%);
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: rgb(10 15 31 / 0.7);
+  backdrop-filter: blur(6px);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+  white-space: nowrap;
+}

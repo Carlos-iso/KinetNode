@@ -1,0 +1,119 @@
+.graph {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.graph__svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.graph__ring {
+  fill: none;
+  stroke: rgb(234 242 255 / 0.08);
+  stroke-width: 1;
+}
+.graph__ring--outer {
+  stroke-dasharray: 2 6;
+  stroke: rgb(234 242 255 / 0.16);
+}
+
+.graph__orbit {
+  transform-origin: 50% 50%;
+  transform-box: view-box;
+  animation: graph-spin 28s linear infinite;
+}
+
+.graph__link {
+  stroke: rgb(143 233 255 / 0.22);
+  stroke-width: 1;
+}
+.graph__link--inner {
+  stroke: rgb(143 233 255 / 0.12);
+}
+
+.graph__pulse {
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 18 400;
+  stroke-dashoffset: 18;
+  opacity: 0.9;
+  animation: graph-pulse 4.4s var(--ease) infinite;
+}
+
+.graph__dot {
+  fill: rgb(234 242 255 / 0.4);
+}
+
+.graph__halo {
+  opacity: 0.14;
+}
+
+.graph__node {
+  opacity: 0;
+  animation: graph-in 0.9s var(--ease) forwards;
+}
+
+.graph__label {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  fill: var(--text);
+}
+.graph__meta {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: var(--text-3);
+}
+
+.graph__core {
+  animation: graph-float 7s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+@keyframes graph-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes graph-pulse {
+  0% {
+    stroke-dashoffset: 18;
+  }
+  60%,
+  100% {
+    stroke-dashoffset: -230;
+  }
+}
+@keyframes graph-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes graph-float {
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* O SVG encolhe no mobile; compensa o tamanho dos rótulos. */
+@media (max-width: 640px) {
+  .graph__label {
+    font-size: 22px;
+  }
+  .graph__meta {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Versioner — Brand Kit</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0a0a12; font-family: 'SF Mono', 'Fira Code', monospace; padding: 2rem; }
+    .vk { background: #111118; border-radius: 12px; padding: 1rem; display: grid; gap: 10px; max-width: 640px; margin: 0 auto; }
+    .row { display: grid; gap: 10px; }
+    .card { background: #1a1a28; border: 0.5px solid #2d2550; border-radius: 10px; overflow: hidden; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  </style>
+</head>
+<body>
+<div class="vk">
+
+  <!-- CORES -->
+  <div class="row" style="grid-template-columns:repeat(4,1fr)">
+    <div class="card" style="height:80px;background:#7c3aed;display:flex;flex-direction:column;justify-content:flex-end"><span style="font-size:10px;color:#c4b5fd;padding:6px 10px;opacity:.8">#7c3aed</span></div>
+    <div class="card" style="height:80px;background:#a78bfa;display:flex;flex-direction:column;justify-content:flex-end"><span style="font-size:10px;color:#3b1f7a;padding:6px 10px;opacity:.9">#a78bfa</span></div>
+    <div class="card" style="height:80px;background:#1a1630;display:flex;flex-direction:column;justify-content:flex-end"><span style="font-size:10px;color:#a78bfa;padding:6px 10px">#1a1630</span></div>
+    <div class="card" style="height:80px;background:#0f0f1a;display:flex;flex-direction:column;justify-content:flex-end"><span style="font-size:10px;color:#534AB7;padding:6px 10px">#0f0f1a</span></div>
+  </div>
+
+  <!-- LOGO + ÍCONE -->
+  <div class="row" style="grid-template-columns:1.8fr 1fr">
+    <div class="card" style="background:#0f0f1a;display:flex;align-items:center;justify-content:center;padding:28px;gap:16px">
+      <svg width="48" height="48" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="256" height="256" rx="40" fill="url(#lg1)"/>
+        <path d="M76 82L128 174L180 82" stroke="url(#lg2)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="256" y2="256"><stop stop-color="#1E1B4B"/><stop offset="1" stop-color="#0F0F1A"/></linearGradient>
+          <linearGradient id="lg2" x1="76" y1="82" x2="167" y2="185"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+        </defs>
+      </svg>
+      <span style="font-size:28px;font-weight:500;color:#f9fafb;font-family:system-ui,sans-serif;letter-spacing:-.5px">versioner</span>
+    </div>
+    <div class="card" style="background:#0f0f1a;display:flex;align-items:center;justify-content:center">
+      <svg width="56" height="56" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="256" height="256" rx="56" fill="#1a1630"/>
+        <path d="M76 82L128 174L180 82" stroke="url(#lg3)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="lg3" x1="76" y1="82" x2="167" y2="185"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- PADRÕES -->
+  <div class="card" style="background:#0f0f1a;padding:20px 24px;overflow:hidden;position:relative;height:100px">
+    <svg width="100%" height="100" viewBox="0 0 600 100" preserveAspectRatio="xMidYMid slice" style="position:absolute;top:0;left:0;opacity:.18">
+      <defs><pattern id="pg" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M0 20L20 0L40 20L20 40Z" fill="none" stroke="#7c3aed" stroke-width=".8"/></pattern></defs>
+      <rect width="600" height="100" fill="url(#pg)"/>
+    </svg>
+    <div style="position:relative;display:flex;align-items:center;gap:12px;height:100%;flex-wrap:wrap">
+      <code style="font-size:12px;color:#a78bfa;background:#1a1630;border:0.5px solid #2d2550;padding:4px 10px;border-radius:6px">versioner build "msg"</code>
+      <code style="font-size:12px;color:#6b7280;background:#1a1630;border:0.5px solid #1a1630;padding:4px 10px;border-radius:6px">versioner minor "msg"</code>
+      <code style="font-size:12px;color:#6b7280;background:#1a1630;border:0.5px solid #1a1630;padding:4px 10px;border-radius:6px">versioner major "msg"</code>
+      <code style="font-size:12px;color:#6b7280;background:#1a1630;border:0.5px solid #1a1630;padding:4px 10px;border-radius:6px">--no-push</code>
+      <code style="font-size:12px;color:#6b7280;background:#1a1630;border:0.5px solid #1a1630;padding:4px 10px;border-radius:6px">--dry-run</code>
+    </div>
+  </div>
+
+  <!-- MOCKUP TERMINAL + STATUS/LOG -->
+  <div class="row" style="grid-template-columns:1.8fr 1fr">
+    <div class="card" style="background:#0d0d16;padding:18px 18px 20px">
+      <div style="background:#1a1630;border-radius:8px;border:0.5px solid #2d2550;overflow:hidden;font-size:12px">
+        <div style="background:#1a1630;padding:9px 14px;display:flex;align-items:center;gap:6px;border-bottom:0.5px solid #2d2550">
+          <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:inline-block"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block"></span>
+          <span style="font-size:11px;color:#4b5563;margin:0 auto">versioner — zsh</span>
+        </div>
+        <div style="padding:14px 16px 16px;line-height:1.7;color:#e5e7eb">
+          <div><span style="color:#534AB7">~/my-app</span> <span style="color:#febc2e">main</span></div>
+          <div><span style="color:#a78bfa">❯</span> versioner build "Corrige autenticação"</div>
+          <div style="margin-top:6px">
+            <div><span style="color:#28c840">  ✓</span> <span style="color:#6b7280">package.json</span><span style="color:#4b5563"> 0.1.9 → </span><span style="color:#c4b5fd">0.1.10</span></div>
+            <div><span style="color:#28c840">  ✓</span> <span style="color:#6b7280">git commit · git push</span></div>
+          </div>
+          <div style="margin-top:8px;padding:8px 12px;background:#130f24;border-radius:5px;border-left:3px solid #7c3aed">
+            <span style="color:#a78bfa;font-size:11px">release </span><span style="color:#c4b5fd">v0.1.10</span><span style="color:#4b5563;font-size:11px"> publicada em 0.8s</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="background:#0d0d16;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px">
+      <div style="background:#1a1630;border:0.5px solid #2d2550;border-radius:8px;padding:10px 14px;width:100%;font-size:11px">
+        <div style="color:#4b5563;margin-bottom:4px">versioner status</div>
+        <div style="color:#c4b5fd">v0.1.10 <span style="color:#28c840">✓ clean</span></div>
+        <div style="color:#6b7280;font-size:10px;margin-top:2px">main · 3 arquivos monitorados</div>
+      </div>
+      <div style="background:#1a1630;border:0.5px solid #2d2550;border-radius:8px;padding:10px 14px;width:100%;font-size:11px">
+        <div style="color:#4b5563;margin-bottom:4px">versioner log</div>
+        <div style="color:#6b7280;font-size:10px;line-height:1.8">
+          <div><span style="color:#534AB7">v0.1.10</span> Corrige autenticação</div>
+          <div><span style="color:#534AB7">v0.1.9</span> Atualiza dependências</div>
+          <div><span style="color:#534AB7">v0.1.8</span> Nova feature</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERSIONER-CLI -->
+  <div class="card" style="background:#0d0d16;padding:18px">
+    <div style="font-size:10px;color:#534AB7;letter-spacing:.1em;margin-bottom:12px">VERSIONER-CLI · MODO INTERATIVO</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <!-- TUI mockup -->
+      <div style="background:#0a0a12;border:0.5px solid #2d2550;border-radius:8px;overflow:hidden;font-size:11px">
+        <div style="background:#1a1630;padding:7px 12px;display:flex;align-items:center;gap:5px;border-bottom:0.5px solid #2d2550">
+          <span style="width:8px;height:8px;border-radius:50%;background:#ff5f57;display:inline-block"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:#febc2e;display:inline-block"></span>
+          <span style="width:8px;height:8px;border-radius:50%;background:#28c840;display:inline-block"></span>
+          <span style="font-size:10px;color:#4b5563;margin:0 auto">versioner-cli</span>
+        </div>
+        <div style="padding:10px 12px;line-height:1.8">
+          <div style="color:#4b5563;font-size:10px;margin-bottom:6px">Selecione um comando &nbsp;<span style="color:#2d2550">↑↓ · enter · q</span></div>
+          <div style="background:#7c3aed18;border:0.5px solid #7c3aed40;border-radius:5px;padding:5px 8px;display:flex;gap:8px;margin-bottom:3px">
+            <span style="color:#a78bfa;width:6px">•</span>
+            <span style="color:#c4b5fd;width:52px">build</span>
+            <span style="color:#534AB7;font-size:10px">Incrementa build e publica</span>
+          </div>
+          <div style="padding:4px 8px;display:flex;gap:8px">
+            <span style="color:#2d2550;width:6px">•</span>
+            <span style="color:#4b5563;width:52px">minor</span>
+            <span style="color:#374151;font-size:10px">Incrementa minor e build</span>
+          </div>
+          <div style="padding:4px 8px;display:flex;gap:8px">
+            <span style="color:#2d2550;width:6px">•</span>
+            <span style="color:#4b5563;width:52px">major</span>
+            <span style="color:#374151;font-size:10px">Incrementa major, zera minor</span>
+          </div>
+          <div style="padding:4px 8px;display:flex;gap:8px">
+            <span style="color:#2d2550;width:6px">•</span>
+            <span style="color:#4b5563;width:52px">status</span>
+            <span style="color:#374151;font-size:10px">Mostra versão e estado git</span>
+          </div>
+          <div style="padding:4px 8px;display:flex;gap:8px">
+            <span style="color:#2d2550;width:6px">•</span>
+            <span style="color:#4b5563;width:52px">log</span>
+            <span style="color:#374151;font-size:10px">Lista commits recentes</span>
+          </div>
+          <div style="margin-top:8px;border-top:0.5px solid #1a1630;padding-top:7px;font-size:10px;color:#374151">
+            <span style="color:#534AB7">versioner-cli</span> · powered by cliplay
+          </div>
+        </div>
+      </div>
+      <!-- Info -->
+      <div style="display:flex;flex-direction:column;gap:8px;justify-content:center">
+        <div style="background:#1a1630;border:0.5px solid #2d2550;border-radius:7px;padding:8px 12px">
+          <div style="font-size:10px;color:#a78bfa;margin-bottom:2px">navegação</div>
+          <div style="font-size:10px;color:#4b5563">↑↓ mover · enter executar · q sair</div>
+        </div>
+        <div style="background:#1a1630;border:0.5px solid #2d2550;border-radius:7px;padding:8px 12px">
+          <div style="font-size:10px;color:#a78bfa;margin-bottom:2px">instalação</div>
+          <code style="font-size:10px;color:#c4b5fd">npm i -g @kinetnode/versioner-cli</code>
+        </div>
+        <div style="background:#1a1630;border:0.5px solid #2d2550;border-radius:7px;padding:8px 12px">
+          <div style="font-size:10px;color:#a78bfa;margin-bottom:2px">powered by</div>
+          <div style="font-size:10px;color:#4b5563">cliplay · TUI acoplável kinetnode</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div class="card" style="background:#0d0d16;padding:16px 18px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <svg width="24" height="24" viewBox="0 0 256 256" fill="none">
+        <rect width="256" height="256" rx="32" fill="#1a1630"/>
+        <path d="M76 82L128 174L180 82" stroke="url(#lg4)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="lg4" x1="76" y1="82" x2="167" y2="185"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+        </defs>
+      </svg>
+      <span style="font-size:14px;color:#f9fafb;font-family:system-ui,sans-serif">versioner</span>
+      <span style="margin-left:auto;font-size:11px;color:#4b5563">@kinetnode/versioner · @kinetnode/versioner-cli</span>
+      <code style="font-size:11px;color:#a78bfa;background:#1a1630;border:0.5px solid #2d2550;padding:3px 8px;border-radius:5px">v0.1.10</code>
+      <code style="font-size:11px;color:#534AB7;background:#1a1630;border:0.5px solid #2d2550;padding:3px 8px;border-radius:5px">cli v0.0.1</code>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
